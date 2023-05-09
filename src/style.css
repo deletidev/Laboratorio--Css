@@ -1,0 +1,243 @@
+/* Reset */
+:root {
+  --color-primary: #212429;
+  --color-secondary: #ffffff;
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 2rem;
+  --space-4: 2.5rem;
+  --space-5: 4rem;
+  --fs-xl: 2rem;
+  --fs-l: 1.625rem;
+  --fs-m: 1rem;
+  --fs-s: 0.875rem;
+  --maximo-diseño: 1280px;
+  --boder-radius: 10px;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+body,
+h1,
+figure,
+picture {
+  margin: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1;
+}
+.container {
+  width: 100%;
+  max-width: var(--maximo-diseño);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-3);
+  padding-right: var(--space-3);
+}
+
+/* header */
+.header {
+  border-bottom: 1px solid var(--color-primary);
+}
+
+.header-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--space-3);
+  padding-bottom: var(--space-3);
+}
+
+.client-nav__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-5);
+}
+
+.client-nav__item {
+  display: block;
+  height: fit-content;
+}
+
+.menu-btn {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.section-nav {
+  display: none;
+}
+
+@media screen and (min-width: 1000px) {
+  .section-nav {
+    display: block;
+  }
+}
+
+.section-nav__container {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.section-nav__item {
+  text-transform: uppercase;
+  /* lo he puesto en 14px porque en la foto está en 14,
+  si lo subo a 16 como está en el enunciado se ve más grande */
+  font-size: var(--fs-s);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  transition: text-decoration 0.5s ease;
+}
+.section-nav__item:hover {
+  text-decoration-color: inherit;
+}
+
+/* ropa */
+.colecction {
+  padding-top: var(--space-4);
+  padding-bottom: var(--space-3);
+}
+.title {
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  font-size: var(--fs-l);
+}
+
+.title::first-letter {
+  font-size: var(--fs-xl);
+}
+
+.grid__container {
+  width: 82%;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-3);
+  justify-items: center;
+  padding-top: var(--space-3);
+  padding-bottom: var(--space-2);
+}
+
+.card__link {
+  border-radius: var(--boder-radius);
+  margin-bottom: var(--space-2);
+  display: block;
+  border: 0.7px solid transparent;
+  transition: border-color 0.5s ease;
+}
+
+@media (hover: hover) {
+  .card__link:hover {
+    /* box-shadow: 0px 0px 25px 2px rgba(30, 30, 30, 0.25); */
+    border-color: var(--color-primary);
+  }
+}
+
+.card__img {
+  pointer-events: none;
+  border-radius: var(--boder-radius);
+}
+
+.card__text {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  padding-left: var(--space-2);
+  padding-right: var(--space-2);
+  font-size: var(--fs-s);
+}
+.card__price {
+  font-weight: 800;
+}
+
+/* footer */
+.footer {
+  background-color: var(--color-primary);
+  padding-top: var(--space-3);
+  padding-bottom: var(--space-3);
+}
+
+.footer-flex {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+@media screen and (min-width: 600px) {
+  .footer-flex {
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .footer-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+}
+
+.footer__item {
+  color: var(--color-secondary);
+  font-size: var(--fs-m);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  transition: text-decoration 0.5s ease;
+}
+@media (hover: hover) {
+  .footer__item:hover {
+    text-decoration-color: inherit;
+  }
+}
+
+.footer__span {
+  background-color: var(--color-secondary);
+  padding: 10px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+}
